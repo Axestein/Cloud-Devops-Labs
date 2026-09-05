@@ -1,0 +1,105 @@
+# name: CI Pipeline with ChatOps
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+    
+#     steps:
+#     - name: Checkout Code
+#       uses: actions/checkout@v3
+    
+#     - name: Build Application
+#       run: |
+#         echo "🔨 Build started at $(date)"
+#         echo "📁 Building project..."
+#         # Validation
+#         if [ -f "index.html" ]; then
+#           echo "✅ Build successful"
+#         else
+#           echo "❌ Build failed"
+#           exit 1
+#         fi
+    
+#     - name: Notify Slack - Success
+#       if: success()
+#       run: |
+#         curl -X POST -H 'Content-type: application/json' \
+#         --data '{
+#           "text": "✅ *Build Successful!*\n\n📦 Repository: ${{ github.repository }}\n🌿 Branch: ${{ github.ref_name }}\n🔗 Commit: `${{ github.sha }}`\n👤 Author: ${{ github.actor }}\n🕐 Time: $(date)\n\n🔗 View: ${{ github.server_url }}/${{ github.repository }}/actions"
+#         }' \
+#         ${{ secrets.SLACK_WEBHOOK_URL }}
+    
+#     - name: Notify Slack - Failure
+#       if: failure()
+#       run: |
+#         curl -X POST -H 'Content-type: application/json' \
+#         --data '{
+#           "text": "❌ *Build Failed!*\n\n📦 Repository: ${{ github.repository }}\n🌿 Branch: ${{ github.ref_name }}\n👤 Author: ${{ github.actor }}\n🕐 Time: $(date)\n\n🔗 Check logs: ${{ github.server_url }}/${{ github.repository }}/actions"
+#         }' \
+#         ${{ secrets.SLACK_WEBHOOK_URL }}
+    
+#     - name: Upload Artifact
+#       uses: actions/upload-artifact@v3
+#       with:
+#         name: webapp-build
+#         path: .
+
+name: CI Pipeline
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    
+    - name: Display Build Start
+      run: echo "🔨 Build started at $(date)"
+    
+    - name: List Files
+      run: |
+        echo "📁 Project files:"
+        ls -la
+    
+    - name: Validate HTML
+      run: |
+        echo "🔍 Validating HTML..."
+        if [ -f "index.html" ]; then
+          echo "✅ index.html exists"
+          if grep -q "DevOps" index.html; then
+            echo "✅ Content validation passed"
+          else
+            echo "⚠️  Content check warning"
+          fi
+        else
+          echo "❌ index.html not found!"
+          exit 1
+        fi
+    
+    - name: Build Success
+      run: |
+        echo "✅ Build Completed Successfully!"
+        echo "📊 Build Statistics:"
+        echo "   - Files: $(find . -type f | wc -l)"
+        echo "   - Size: $(du -sh . | cut -f1)"
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: webapp-build
+        path: .
+    
+    - name: Display Build End
+      run: echo "🏁 Build finished at $(date)"
