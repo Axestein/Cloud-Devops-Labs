@@ -5,14 +5,14 @@
 A collection of hands-on AWS and DevOps labs completed as part of my coursework — covering core AWS services (EC2, S3, IAM, CloudWatch), Linux fundamentals, Git/GitHub CI-CD pipelines, Infrastructure as Code (Terraform), Configuration Management (Ansible), Containerization (Docker), and Orchestration (Kubernetes).
 
 Each lab folder contains:
-- 📄 A completed lab report (screenshots + step-by-step walkthrough)
-- 📋 The original practice/reference sheet
-- 📘 A `README.md` summarizing what was done
-- 💻 (where applicable) the actual project source code used in the lab
+- A completed lab report (screenshots + step-by-step walkthrough)
+- The original practice/reference sheet
+- A `README.md` summarizing what was done
+- (where applicable) the actual project source code used in the lab
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 cloud-devops-learning/
@@ -69,7 +69,7 @@ cloud-devops-learning/
 
 ## Lab Index
 
-### ☁️ AWS Practice Labs
+### AWS Practice Labs
 | # | Lab | Focus | Details |
 |---|---|---|---|
 | 01 | [EC2 Instance Deployment](AWS%20Practice%20Labs/01-ec2-instance/README.md) | Launching & connecting to EC2, deploying Apache | t2.micro, Amazon Linux 2, SSH, `httpd` |
@@ -77,7 +77,7 @@ cloud-devops-learning/
 | 03 | [IAM Secure Access](AWS%20Practice%20Labs/03-iam/README.md) | Identity & Access Management | IAM user, group, least-privilege S3 read-only policy |
 | 04 | [CloudWatch Monitoring](AWS%20Practice%20Labs/04-cloudwatch/README.md) | Monitoring, alarms, dashboards | CPU alarm + SNS, CloudWatch Agent, custom dashboard |
 
-### 🖥️ Virtual Labs
+### Virtual Labs
 | # | Lab | Focus | Details |
 |---|---|---|---|
 | 01 | [Linux Commands](Virtual%20Labs/01-linux-commands/README.md) | Shell fundamentals | File I/O, redirection, STDIN/STDOUT/STDERR, `grep`/`cut`/`awk`, AWS CLI setup |
