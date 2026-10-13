@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Code checked out from GitHub'
+                sh 'ls -la'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker build -t myapp:latest .'
+            }
+        }
+        stage('Load into Minikube') {
+            steps {
+                sh 'minikube image load myapp:latest'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'kubectl apply -f deployment.yaml'
+                sh 'kubectl rollout status deployment/myapp --timeout=90s'
+            }
+        }
+    }
+}

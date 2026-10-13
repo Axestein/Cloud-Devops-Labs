@@ -58,10 +58,20 @@ cloud-devops-learning/
     │   ├── VLE-03-Terraform-Ansible-AWS.pdf
     │   └── README.md
     │
-    └── 04-end-to-end-devops/
-        ├── Project/
-        ├── End-to-End-CI-CD-Pipeline.pdf
-        ├── VLE-04-End-to-End-DevOps-Pipeline.pdf
+    ├── 04-end-to-end-devops/
+    │   ├── Project/
+    │   ├── End-to-End-CI-CD-Pipeline.pdf
+    │   ├── VLE-04-End-to-End-DevOps-Pipeline.pdf
+    │   └── README.md
+    │
+    ├── 05-jenkins-maven/
+    │   ├── VLE6_0916.pdf
+    │   ├── VLE-6.docx
+    │   └── README.md
+    │
+    └── 06-devops-monitoring-system/
+        ├── 0916_VLE7.pdf
+        ├── VLE-7.pdf
         └── README.md
 ```
 
@@ -84,6 +94,8 @@ cloud-devops-learning/
 | 02 | [Git, GitHub & CI/CD](Virtual%20Labs/02-git-github-actions-ci-cd/README.md) | Version control + automation | GitHub Actions CI pipeline, Slack ChatOps, Vercel CD |
 | 03 | [Terraform + Ansible](Virtual%20Labs/03-terraform-ansible/README.md) | Infrastructure as Code + Config Mgmt | VPC/subnet/EC2 via Terraform, Docker install via Ansible |
 | 04 | [End-to-End DevOps Pipeline](Virtual%20Labs/04-end-to-end-devops/README.md) | Full-stack automation | Git → Terraform → Ansible → Docker → Kubernetes → GitHub Actions |
+| 05 | [Jenkins with Maven](Virtual%20Labs/05-jenkins-maven/README.md) | CI with Jenkins | Freestyle job, Maven `clean package`, GitHub-hosted Java project |
+| 06 | [DevOps Monitoring System](Virtual%20Labs/06-devops-monitoring-system/README.md) | Monitoring & alerting | EC2 + Minikube, Jenkins pipeline, Prometheus, Grafana, Alertmanager rules |
 
 ---
 
@@ -95,8 +107,10 @@ cloud-devops-learning/
 | Infrastructure as Code | Terraform |
 | Configuration Management | Ansible |
 | Containerization | Docker |
-| Orchestration | Kubernetes (Minikube) |
-| CI/CD | GitHub Actions |
+| Orchestration | Kubernetes (Minikube), Helm |
+| Build Tool | Maven (Java) |
+| Monitoring & Alerting | Prometheus, Grafana, Alertmanager |
+| CI/CD | GitHub Actions, Jenkins (Jenkinsfile pipelines) |
 | ChatOps | Slack (Incoming Webhooks) |
 | Static Hosting / CD | Vercel |
 | OS / Shell | Linux (Amazon Linux 2/2023, Ubuntu/WSL) |
