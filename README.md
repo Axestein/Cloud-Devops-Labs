@@ -1,7 +1,5 @@
 # Cloud & DevOps Learning Labs
 
-**Author:** Aditya Kumar Singh
-
 A collection of hands-on AWS and DevOps labs completed as part of my coursework — covering core AWS services (EC2, S3, IAM, CloudWatch), Linux fundamentals, Git/GitHub CI-CD pipelines, Infrastructure as Code (Terraform), Configuration Management (Ansible), Containerization (Docker), and Orchestration (Kubernetes).
 
 Each lab folder contains:
